@@ -95,7 +95,7 @@ Features 功能特性
 
 -	测试任务
 
-	-	支持 mocha 测试用例运行
+	-	支持 mocha 测试用例运行。mocha是现在JS的测试框架之一，浏览器和服务器(Node)都可以使用，负责运行测试脚本(自写)。
 	-	支持react官方工具库react-dom/test-utils的单元测试
 	-	支持Enzyme的react-redux的测试
 	-	支持Istanbul 覆盖率测试
@@ -154,13 +154,13 @@ $ npm run build
 ```
 react-starter-kit/
 ├─src                 // 源文件目录
-│  ├─Action     
+│  ├─Action           // step1.请求
 │  ├─Assets           // 图片资源
 │  ├─Component
 │  │  └─Common
-│  ├─Config
+│  ├─Config           // step3.数据处理后进行route
 │  ├─Iconfont         // 字体
-│  ├─Reducer
+│  ├─Reducer          // step2.数据处理。Redux中，整个APP只有一个Store,但是可以有多个Reducer
 │  ├─Style
 │  ├─Template         // html模板
 │  └─utils

@@ -12,24 +12,24 @@ import store from './Config/Store'; // 引入Store
 
 // 订阅state改变
 store.subscribe(() => {
-    console.log(store.getState());
+  console.log(store.getState());
 });
 
 
 const render = (Component) => {
-    ReactDOM.render(
-        <AppContainer >
-            <Provider store={store}>
-                <Component />
-            </Provider>
-        </AppContainer>, document.getElementById('root'));
+  ReactDOM.render(
+    <AppContainer >
+      <Provider store={store}>
+        <Component />
+      </Provider>
+    </AppContainer>, document.getElementById('root'));
 };
 
 render(App);
 
 // 模块热替换的 API
 if (module.hot) {
-    module.hot.accept('./Config/Route', () => {
-        render(App);
-    });
+  module.hot.accept('./Config/Route', () => {
+    render(App);
+  });
 }

@@ -1,7 +1,35 @@
+.ant-layout {
+  height: 100%;
+  background: #404040;
+  .ant-layout-header{
+    width: 120px;
+    height: 31px;
+  }
+  .ant-layout-sider {
+    overflow: auto;
+    position: fixed;
+    left: 0;
+    top: 0.64rem;
+    bottom: 0.2rem;
+    flex: 0;
+    &.ant-layout-sider-children {
+      .nav-text {
+        display: none;
+      }
+      .ant-menu-submenu {
+        .nav-text {
+          display: inline;
+        }
+      }
+    }
+    .ant-menu-item {
+      a {
+        color: rgba(255, 255, 255, 0.67);
+      }
+    }
+  }
 
-.app {
-  text-align: center;
-  a{
-    color: blue;
+  .ant-layout-content {
+    overflow-y: scroll;
   }
 }

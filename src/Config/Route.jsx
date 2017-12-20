@@ -19,25 +19,25 @@ import loadTodoList from 'bundle-loader?lazy!../Containers/TodoListContainer'; /
 // components load their module for initial visit
 // 这里只是给this.props.children传一个方法，最后在Bundle的render里面调用
 const createComponent = component => props => (
-    <Bundle load={component}>
-        {Component => <Component {...props} />}
-    </Bundle>
+  <Bundle load={component}>
+    {Component => <Component {...props} />}
+  </Bundle>
 );
 
 // 路由配置
 const RouteConfig = () => (
-    <Router>
-      <div className="app">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/from" component={createComponent(loadFrom)} />
-          <Route path="/comment" component={createComponent(loadComment)} />
-          <Route path="/like" component={createComponent(loadLike)} />
-          <Route path="/list" component={createComponent(loadTodoList)} />
-          <Route component={NotFoundPage} />
-        </Switch>
-      </div>
-    </Router>
+  <Router>
+    <div className="app">
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/from" component={createComponent(loadFrom)} />
+        <Route path="/comment" component={createComponent(loadComment)} />
+        <Route path="/like" component={createComponent(loadLike)} />
+        <Route path="/list" component={createComponent(loadTodoList)} />
+        <Route component={NotFoundPage} />
+      </Switch>
+    </div>
+  </Router>
 );
 
 // 导出
